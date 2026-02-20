@@ -150,5 +150,12 @@ def get_history():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+import os
+
+if __name__ == "__main__":
+    # Render provides a specific port in an environment variable
+    # We MUST use it, or fallback to 5000 for local testing
+    port = int(os.environ.get("PORT", 5000))
+
+    # host='0.0.0.0' is REQUIRED for Render to see your app
+    app.run(host='0.0.0.0', port=port)
