@@ -1,14 +1,12 @@
-# Fixed version pins to resolve the 'proxy' argument error
-supabase==2.10.0
-httpx==0.27.2
-gotrue==2.9.0
-
-# Core backend requirements
+# Backend Requirements for Resume Parser with Supabase
 flask==3.0.0
 flask-cors==4.0.0
 pdfplumber==0.11.0
 spacy==3.7.2
+supabase==2.3.4
 python-dotenv==1.0.0
 
-# Optional: Gunicorn for better production stability on Render
-gunicorn==21.2.0
+# For spaCy language model, run after installing:
+# python -m spacy download en_core_web_sm
+# Or for better results:
+# python -m spacy download en_core_web_md
